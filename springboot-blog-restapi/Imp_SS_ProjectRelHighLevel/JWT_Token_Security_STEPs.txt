@@ -1,0 +1,21 @@
+
+Development STEPs:
+
+1- Add JWT related Maven dependencies : in pom.xml
+
+2- Create JwtAuthenticationEntryPoint : In Security Package -
+                // this method will call whenever an exception is thrown due to UnAuthorize user trying to access a resource that requires Authentication.
+
+3- Add Jwt properties in application.properties file   : will be adding secret key and expiration time in millisecond
+
+4- Create JwtTokenProvider - Utility class and method: In Security Package ->
+                handle generate and validate token , handle exceptions : these are function defined : generateJwtToken,Key,getUsername,validateToken
+
+5- Create JwtAuthenticationFilter : In Security Package ->
+                // JwtAuthenticationFilter CLASS will USE to authenticate the jwt token. So this will execute before the Security FILTER .
+
+6- Create JwtAuthResponse DTO : In Payload package with
+
+7- Configure JWT in Spring Security :  JwtAuthenticationEntryPoint and JwtAuthenticationFilter injected :   Lect-121. Configuring JWT in Spring Security Configuration
+
+8- Change Login/Signin REST API to Return JWT Token : will modify the login route instead of very and login now will generate the token and return response as token so that it can be used to access other endpoints.
