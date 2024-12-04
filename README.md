@@ -44,13 +44,13 @@ To get started with any of the branches, follow these steps:
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/your-username/udemy-spring-boot-learning.git
+    git clone https://github.com/THENHKHAN//SpringBootBlogAPI.git
     ```
 
 2. **Navigate to the project directory:**
 
     ```sh
-    cd udemy-spring-boot-learning
+    cd SpringBootBlogAPI
     ```
 
 3. **Check out the branch you want to work on:**
@@ -77,10 +77,6 @@ To get started with any of the branches, follow these steps:
 ## Contributions
 
 Feel free to fork this repository and make contributions. Please submit a pull request for any improvements or additions.
-
-## License
-
-This project is licensed under the MIT License.
 
 ---
 
