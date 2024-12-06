@@ -1,4 +1,4 @@
-# Udemy Spring Boot Learning
+# Spring Boot Learning
 Welcome to the **Spring Boot Learning With SpringBootBlogAPI** repository! In this project, we explore various aspects of the `Spring Boot` Java framework through a series of mini-projects and exercises. Each branch(used earlier before moving into this repo) represents a specific feature or concept implemented in Spring Boot, ranging from basic CRUD operations to advanced security and validation mechanisms. <br>
 Here you can see swagger UI- Api exposed
 [swaggerUI1](https://github.com/THENHKHAN/SpringBootBlogAPI/tree/main/springboot-blog-restapi/Imp_SS_EndPointsCLient/17.1_SwaggerUI_exposes_.png) 
