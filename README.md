@@ -9,7 +9,7 @@ Here you can see swagger UI- Api exposed
 ## About Branches
 
 ### 1. **sbWeb**
-This mini project contains CRUD operations without the DB (javaGuidUdemyStarting Proj) in this branch.
+This mini project contains CRUD operations without DB in this branch.
 
 ### 2. **blogApp_1**
 Started with actual Spring Boot with DB - created API for Blog Posts.
