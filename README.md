@@ -6,37 +6,49 @@ Here you can see swagger UI- Api exposed
 
 ---
 
-## About Branches
+Architecture and Design
 
-### 1. **sbWeb**
-This mini project contains CRUD operations without DB in this branch.
+This project implements a Blog API backend using Spring Boot, following a layered architecture pattern to separate concerns and ensure scalability and maintainability.
 
-### 2. **blogApp_1**
-Started with actual Spring Boot with DB - created API for Blog Posts.
+High-Level Architecture
 
-### 3. **blogApp_2_CommentResource**
-Created API for Blog Post's comments.
+Controller Layer: Handles incoming HTTP requests and returns responses. Validates inputs and forwards requests to the service layer.
 
-### 4. **pagination-sorting**
-Implemented pagination and sorting functionalities.
+Service Layer: Contains the core business logic for managing blog posts, including create, read, update, and delete operations.
 
-### 5. **modelmapperLibForDtosEntities**
-Added a ModelMapper library in `pom.xml` for entity to DTO and vice-versa.
+Repository Layer: Interfaces with the database using Spring Data JPA to perform CRUD operations on entities.
 
-### 6. **exceptionHandlingWithMeaningFulResponse**
-Customized the exception handling in Spring Boot to our own way.
+Security Layer: Implements user authentication and authorization to protect endpoints.
 
-### 7. **validationInSB**
-Validation for getting response or payload from user. Example: name can't be null.
+Exception Handling: Global handlers manage errors and provide consistent error responses.
 
-### 8. **user-role-Security**
-Completed on 2nd July but mistakenly written commit as 7th July.
+Low-Level Design
 
-### 9. **login-register-api**
-Implemented APIs for registering new users and logging in.
+Key classes and their responsibilities:
 
-### 10. **JwtImpl**
-Implemented JWT authorization to get JWT Token as response.
+BlogPost: Represents blog posts with fields such as title, content, author, and timestamps.
+
+User: Represents users with authentication-related data.
+
+BlogPostService: Provides methods to manage blog posts and enforce business rules.
+
+BlogPostRepository: Interfaces with the database for data persistence.
+
+ExceptionHandler: Handles custom exceptions such as “PostNotFound”.
+
+Learning and Ownership
+
+This project was initially built following a Udemy course to learn Spring Boot fundamentals. Since then, I have extended it by adding:
+
+Custom exception handling
+
+Input validation
+
+Basic authentication
+
+Thoughtful API structure following best practices
+
+I am actively working on adding features such as pagination, logging, and automated tests to improve its robustness.
 
 ---
 
@@ -84,3 +96,4 @@ Feel free to fork this repository and make contributions. Please submit a pull r
 ---
 
 ### Happy Coding!
+
