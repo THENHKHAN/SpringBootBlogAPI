@@ -61,6 +61,63 @@ This implementation leverages Spring Data JPA’s built-in support for `Pageable
 
 ---
 
+## 🚦 API Routes and Endpoints
+
+The API exposes RESTful endpoints for managing blog posts and users. Below is a summary of key routes along with their purpose and expected input/output.
+
+| HTTP Method | Route                  | Description                                  | Request Body / Params                       | Response                          |
+|-------------|------------------------|----------------------------------------------|--------------------------------------------|----------------------------------|
+| `POST`      | `/api/posts`           | Create a new blog post                        | JSON `{ "title": "...", "content": "...", "authorId": ... }` | Created blog post object          |
+| `GET`       | `/api/posts`           | Retrieve all blog posts (supports pagination & sorting) | Query params: `page`, `size`, `sort` (e.g., `?page=0&size=10&sort=createdAt,desc`) | Paginated list of blog posts     |
+| `GET`       | `/api/posts/{id}`      | Retrieve a single blog post by its ID        | Path param: `id`                           | Blog post object or 404 if not found |
+| `PUT`       | `/api/posts/{id}`      | Update an existing blog post                  | Path param: `id`; JSON with updated fields | Updated blog post object          |
+| `DELETE`    | `/api/posts/{id}`      | Delete a blog post                            | Path param: `id`                           | 204 No Content on success         |
+| `POST`      | `/api/auth/register`   | Register a new user                           | JSON `{ "username": "...", "password": "...", "email": "..." }` | User object or success message    |
+| `POST`      | `/api/auth/login`      | Authenticate user and receive JWT token      | JSON `{ "username": "...", "password": "..." }` | JWT token                         |
+
+---
+
+### Endpoint Details:
+
+- **Create Post (`POST /api/posts`)**  
+  Accepts a JSON payload containing `title`, `content`, and `authorId`.  
+  Validates input and creates a new blog post in the database. Returns the created post with its ID and timestamps.
+
+- **Get Posts (`GET /api/posts`)**  
+  Supports query parameters for **pagination** (`page`, `size`) and **sorting** (`sort`).  
+  Returns a paginated response containing posts and metadata like total pages, total elements, and current page number.
+
+- **Get Post by ID (`GET /api/posts/{id}`)**  
+  Returns the blog post with the specified ID.  
+  Returns a 404 error if the post does not exist.
+
+- **Update Post (`PUT /api/posts/{id}`)**  
+  Updates fields of the blog post identified by `id`.  
+  Validates ownership or permissions before updating.
+
+- **Delete Post (`DELETE /api/posts/{id}`)**  
+  Deletes the blog post with the given ID.  
+  Requires appropriate authorization. Returns HTTP 204 on success.
+
+- **User Registration (`POST /api/auth/register`)**  
+  Registers a new user with username, password, and email.  
+  Passwords are securely hashed before storing.
+
+- **User Login (`POST /api/auth/login`)**  
+  Authenticates user credentials and returns a JWT token for session management.
+
+---
+
+### Notes:
+
+- All endpoints that modify data (`POST`, `PUT`, `DELETE`) are protected and require a valid authentication token.
+- The API uses standard HTTP status codes for success and error responses.
+- Input validation is enforced on all request bodies to ensure data consistency and security.
+
+---
+
+
+
 ## 🚀 Getting Started
 
 Follow these steps to get the project up and running:
@@ -106,4 +163,5 @@ Please submit a pull request for any changes you want to contribute.
 ---
 
 ### Happy Coding! 🎉
+
 
