@@ -116,6 +116,42 @@ The API exposes RESTful endpoints for managing blog posts and users. Below is a 
 
 ---
 
+## 🔒 Security
+
+This API implements robust security features to protect sensitive operations and user data.
+
+### Authentication
+
+- Uses **JWT (JSON Web Tokens)** for stateless authentication.  
+- Upon successful login (`POST /api/auth/login`), the server issues a JWT token.  
+- The client includes this token in the `Authorization` header (`Bearer <token>`) of subsequent requests.
+
+### Authorization and Role-Based Access Control (RBAC)
+
+- Protected routes (`POST`, `PUT`, `DELETE` on `/api/posts`, etc.) require a valid JWT token.  
+- The system supports **role-based access control**, distinguishing between roles such as **admin** and **regular users**.  
+- For example:
+  - **Admins** have permissions to manage all posts and users.
+  - **Regular users** can only create, update, or delete their own posts.
+- Role enforcement is done both at the API route level and within the service layer for secure and fine-grained control.
+
+### Password Handling
+
+- User passwords are **hashed using strong algorithms (e.g., BCrypt)** before storage to ensure security.
+
+### Exception Handling for Security
+
+- Unauthorized or invalid token requests return HTTP status `401 Unauthorized`.  
+- Access denied attempts due to insufficient roles return HTTP status `403 Forbidden`.
+
+### Future Enhancements (Planned)
+
+- Refresh token mechanism for better token lifecycle management  
+- Rate limiting to prevent abuse  
+
+---
+
+
 
 
 ## 🚀 Getting Started
@@ -163,5 +199,6 @@ Please submit a pull request for any changes you want to contribute.
 ---
 
 ### Happy Coding! 🎉
+
 
 
