@@ -1,99 +1,97 @@
-# Spring Boot Learning
-Welcome to the **Spring Boot Learning With SpringBootBlogAPI** repository! In this project, we explore various aspects of the `Spring Boot` Java framework through a series of mini-projects and exercises. Each branch(used earlier before moving into this repo) represents a specific feature or concept implemented in Spring Boot, ranging from basic CRUD operations to advanced security and validation mechanisms. <br>
-Here you can see swagger UI- Api exposed
-[swaggerUI1](https://github.com/THENHKHAN/SpringBootBlogAPI/tree/main/springboot-blog-restapi/Imp_SS_EndPointsCLient/17.1_SwaggerUI_exposes_.png) 
-[swaggerUI1](https://github.com/THENHKHAN/SpringBootBlogAPI/blob/main/springboot-blog-restapi/Imp_SS_EndPointsCLient/17.2_SwaggerUI_exposes_.png)
+# Spring Boot Learning With SpringBootBlogAPI 🚀
+
+Welcome to the **Spring Boot Learning With SpringBootBlogAPI** repository!  
+This project explores various aspects of the `Spring Boot` Java framework through mini-projects and exercises. Each branch represents a feature or concept implemented in Spring Boot, ranging from basic CRUD operations to advanced security and validation mechanisms.
 
 ---
 
-Architecture and Design
+## 📸 Swagger UI - API Exposed
 
-This project implements a Blog API backend using Spring Boot, following a layered architecture pattern to separate concerns and ensure scalability and maintainability.
+Check out the Swagger UI screenshots for the exposed API endpoints:  
+[Swagger UI Screenshot 1](https://github.com/THENHKHAN/SpringBootBlogAPI/tree/main/springboot-blog-restapi/Imp_SS_EndPointsCLient/17.1_SwaggerUI_exposes_.png)  
+[Swagger UI Screenshot 2](https://github.com/THENHKHAN/SpringBootBlogAPI/blob/main/springboot-blog-restapi/Imp_SS_EndPointsCLient/17.2_SwaggerUI_exposes_.png)
 
-High-Level Architecture
+---
 
-Controller Layer: Handles incoming HTTP requests and returns responses. Validates inputs and forwards requests to the service layer.
+## 🏗 Architecture and Design
 
-Service Layer: Contains the core business logic for managing blog posts, including create, read, update, and delete operations.
+This project implements a Blog API backend using **Spring Boot**, following a layered architecture pattern to ensure scalability and maintainability.
 
-Repository Layer: Interfaces with the database using Spring Data JPA to perform CRUD operations on entities.
+### High-Level Architecture
 
-Security Layer: Implements user authentication and authorization to protect endpoints.
+- **Controller Layer:** Handles incoming HTTP requests, validates inputs, and returns responses.
+- **Service Layer:** Contains core business logic for managing blog posts (CRUD operations).
+- **Repository Layer:** Interfaces with the database using Spring Data JPA.
+- **Security Layer:** Manages user authentication and authorization.
+- **Exception Handling:** Global handlers provide consistent error responses.
 
-Exception Handling: Global handlers manage errors and provide consistent error responses.
-
-Low-Level Design
+### Low-Level Design
 
 Key classes and their responsibilities:
 
-BlogPost: Represents blog posts with fields such as title, content, author, and timestamps.
+| Class              | Responsibility                                                  |
+|--------------------|-----------------------------------------------------------------|
+| `BlogPost`         | Represents blog posts with title, content, author, timestamps. |
+| `User`             | Represents users with authentication data.                      |
+| `BlogPostService`  | Business logic for creating, reading, updating, deleting posts.|
+| `BlogPostRepository`| Database access layer using Spring Data JPA.                   |
+| `ExceptionHandler` | Custom exception handling (e.g., `PostNotFound`).               |
 
-User: Represents users with authentication-related data.
-
-BlogPostService: Provides methods to manage blog posts and enforce business rules.
-
-BlogPostRepository: Interfaces with the database for data persistence.
-
-ExceptionHandler: Handles custom exceptions such as “PostNotFound”.
-
-Learning and Ownership
+### Learning and Ownership
 
 This project was initially built following a Udemy course to learn Spring Boot fundamentals. Since then, I have extended it by adding:
 
-Custom exception handling
+- Custom exception handling  
+- Input validation  
+- Basic authentication  
+- Thoughtful API structure following best practices
 
-Input validation
-
-Basic authentication
-
-Thoughtful API structure following best practices
-
-I am actively working on adding features such as pagination, logging, and automated tests to improve its robustness.
+I am actively working on features like pagination, logging, and automated tests to improve robustness.
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-To get started with any of the branches, follow these steps:
+Follow these steps to get the project up and running:
 
 1. **Clone the repository:**
 
-    ```sh
-    git clone https://github.com/THENHKHAN//SpringBootBlogAPI.git
+    ```bash
+    git clone https://github.com/THENHKHAN/SpringBootBlogAPI.git
     ```
 
 2. **Navigate to the project directory:**
 
-    ```sh
+    ```bash
     cd SpringBootBlogAPI
     ```
 
-3. **Check out the branch you want to work on:**
+3. **Checkout the branch you want to work on:**
 
-    ```sh
+    ```bash
     git checkout <branch-name>
     ```
 
-    For example, to switch to the `sbWeb` branch:
+    Example:
 
-    ```sh
+    ```bash
     git checkout sbWeb
     ```
 
 4. **Build and run the project:**
 
-    ```sh
+    ```bash
     mvn clean install
     mvn spring-boot:run
     ```
 
 ---
 
-## Contributions
+## 🤝 Contributions
 
-Feel free to fork this repository and make contributions. Please submit a pull request for any improvements or additions.
+Feel free to fork this repository and make improvements or add features.  
+Please submit a pull request for any changes you want to contribute.
 
 ---
 
-### Happy Coding!
-
+### Happy Coding! 🎉
